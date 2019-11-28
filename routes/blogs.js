@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.route('/')
     .get((req, res, next) => {
-        notices.find({})
+        blogs.find({})
             .then((blogs) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ router.route('names')
 
     router.route('/:id')
     .get((req, res, next) => {
-        notices.findById(req.params.id)
+        blogs.findById(req.params.id)
             .then((blog) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -63,7 +63,7 @@ router.route('names')
         res.end("POST operation not supported!");
     })
     .put((req, res, next) => {
-        notices.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true, useFindAndModify: false })
+        blogs.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true, useFindAndModify: false })
             .then((blog) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
@@ -72,7 +72,7 @@ router.route('names')
             .catch((err) => next(err));
     })
     .delete((req, res, next) => {
-        notices.findByIdAndDelete(req.params.id)
+        blogs.findByIdAndDelete(req.params.id)
             .then((reply) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
