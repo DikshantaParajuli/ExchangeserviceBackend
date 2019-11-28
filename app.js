@@ -31,6 +31,7 @@ var clientRouter = require('./routes/clients');
 var requestRouter = require('./routes/requestevents');
 var adminRouter = require('./routes/admindashboard');
 var noticeRouter = require('./routes/notices');
+var blogRouter = require('./routes/blogs');
 
 
 const app = express();
@@ -74,5 +75,6 @@ app.use('/upload', uploadRouter);
 app.use('/clients', clientRouter);
 app.use('/requestevent', requestRouter);
 app.use('/admin', adminRouter);
+app.use('/blogs', blogRouter);
 app.use('/notices', noticeRouter);
 module.exports = app;
