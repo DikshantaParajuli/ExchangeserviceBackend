@@ -29,9 +29,9 @@ var uploadRouter = require('./routes/upload');
 
 var clientRouter = require('./routes/clients');
 var requestRouter = require('./routes/requestevents');
-var adminRouter = require('./routes/admindashboard');
-var noticeRouter = require('./routes/notices');
+
 var blogRouter = require('./routes/blogs');
+var jobRouter = require('./routes/jobs');
 
 
 const app = express();
@@ -74,7 +74,7 @@ app.use('/upload', uploadRouter);
 
 app.use('/clients', clientRouter);
 app.use('/requestevent', requestRouter);
-app.use('/admin', adminRouter);
+
 app.use('/blogs', blogRouter);
-app.use('/notices', noticeRouter);
+app.use('/jobs', jobRouter);
 module.exports = app;
